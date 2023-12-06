@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+
+<head>
+<script>
+	function vidChange(change){
+  		document.getElementById("trailer").src = change;
+	}
+
+	function barbie(choice)
+	{
+		var barbieBorder = document.getElementById('Barbie');
+		barbieBorder.style.border = "3px solid red";
+		barbieBorder.style.borderRadius = "10px";
+
+		var fnafBorder = document.getElementById('Fnaf');
+		fnafBorder.style.border = "none";
+
+		var oppBorder = document.getElementById('Oppenheimer');
+		oppBorder.style.border = "none";
+	}
+
+	function fnaf(choice)
+	{
+		var barbieBorder = document.getElementById('Barbie');
+		barbieBorder.style.border = "none";
+
+		var fnafBorder = document.getElementById('Fnaf');
+		fnafBorder.style.border = "3px solid red";
+		fnafBorder.style.borderRadius = "10px"; 
+
+		var oppBorder = document.getElementById('Oppenheimer');
+		oppBorder.style.border = "none";
+	}
+
+	function oppen(choice)
+	{
+		var barbieBorder = document.getElementById('Barbie');
+		barbieBorder.style.border = "none";
+
+		var fnafBorder = document.getElementById('Fnaf');
+		fnafBorder.style.border = "none";
+
+		var oppBorder = document.getElementById('Oppenheimer');
+		oppBorder.style.border = "3px solid red";
+		oppBorder.style.borderRadius = "10px"; 
+	}
+
+	function barbieInfo(){
+		document.getElementById('plot').innerText = "Plot: Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans."
+		document.getElementById('actors').innerText = "Actors: Margot Robbie, Ryan Gosling";
+
+	}
+
+	function fnafInfo(){
+		document.getElementById('plot').innerText = "Plot: A troubled security guard begins working at Freddy Fazbear's Pizzeria. While spending his first night on the job, he realizes the late shift at Freddy's won't be so easy to make it through."
+		document.getElementById('actors').innerText = "Actors: Josh Hutcherson, Mathew Lillard, Elizabeth Lail";
+
+	}
+
+	function oppenInfo(){
+		document.getElementById('plot').innerText = "Plot: During World War II, Lt. Gen. Leslie Groves Jr. appoints physicist J. Robert Oppenheimer to work on the top-secret Manhattan Project. Oppenheimer and a team of scientists spend years developing and designing the atomic bomb. Their work comes to fruition on July 16, 1945, as they witness the world's first nuclear explosion, forever changing the course of history."
+		document.getElementById('actors').innerText = "Actors: Cilian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr.";
+	}
+
+	function barbieWebsite(){
+		document.getElementById('website').setAttribute("href", "https://www.barbie-themovie.com/");
+	}
+
+	function fnafWebsite(){
+		document.getElementById('website').setAttribute("href", "https://www.fivenightsatfreddys.movie/");
+	}
+
+	function oppenWebsite(){
+		document.getElementById('website').setAttribute("href", "https://www.oppenheimermovie.com/");
+	}
+
+</script>
+<meta charset = "UTF-8">
+<title> Theater Prototype </title>
+</head>
+
+<style>
+
+body{
+	background-color: crimson;
+}
+
+.images{
+    text-align: center;
+}
+
+.table{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.movie-info{
+	float: left;
+	text-align: left;
+	padding-right: 10px;
+}
+
+.ticket-info{
+	float: left;
+	text-align: right;
+	padding-right: 200px;
+}
+
+.showtimes{
+	float: center;
+	text-align: right;
+	padding-left: 10px;
+}
+
+.theater-info{
+	float: right;
+	text-align: right;
+}
+</style>
+<body>
+<h2><center> Grand Meridian Theater </center></h2>
+
+<div class = "theater-info">
+<a id = "tour" href = "index.html">
+<button> Schedule a Tour </button>
+</a>
+</div>
+
+<div class = "images">
+	<button id = "Barbie" type ="button" onclick="vidChange('https://www.youtube.com/embed/pBk4NYhWNMM?si=vAhnClqPL8ZtUd9P'), barbie(), barbieInfo(), barbieWebsite()">
+	<img src = "Barbie Poster.jpg" alt ="Barbie Poster" style="width:300px;height:400px;"> </button>
+	<button id = "Fnaf" type ="button" onclick=" vidChange('https://www.youtube.com/embed/0VH9WCFV6XQ?si=rxaejQ1rECNjRAYK'), fnaf(), fnafInfo(), fnafWebsite()">
+	<img src = "Fnaf Poster.jpg" alt ="Fnaf Poster" style="width:300px;height:400px;"> </button>
+	<button id = "Oppenheimer" type = "button" onclick=" vidChange('https://www.youtube.com/embed/uYPbbksJxIg?si=8i2xwI2d7uwfPRYM'), oppen(), oppenInfo(), oppenWebsite()">
+	<img src = "Oppenheimer Poster.jpg" alt ="Oppenheimer Poster" style="width:300px;height:400px;"> </button>
+</div>
+
+<div class = "movie-info">
+<iframe id ="trailer" width="400" height="400" src="about:blank">
+</iframe>
+<br>
+<a id = "website" href="https://google.com" target="_blank">
+<button> Visit Website </button>
+</a>
+</div>
+
+<div class = "about">
+
+<p id = "plot">Select a movie for a brief description</p>
+<p id = "actors">Select a movie for some prominent actors</p>
+
+</div>
+
+<div class = "ticket-info" style="display: inline-block">
+<h2>General Admission: <br></h2>
+<p>General: $14<br>
+Child/Senior: $12<br>
+Matinee Admission: $12</p>
+</div>
+
+<div class="showtimes" style="display: inline-block">
+    <h2>Barbie:</h2>
+    <button onclick="reserveSeats('Barbie', '1:30')">1:30</button><br>
+    
+    <h2>Five Nights At Freddy's:</h2>
+    <button onclick="reserveSeats('Five Nights At Freddys', '2:00')">2:00</button><br>
+    
+    <h2>Oppenheimer:</h2>
+    <button onclick="reserveSeats('Oppenheimer', '3:30')">3:30</button>
+</div>
+
+
+<!--added for grabbing movie info-->
+<script>
+function reserveSeats(movieTitle, movieTime) {
+    var url = "seat_reservation.html?title=" + encodeURIComponent(movieTitle) + "&time=" + encodeURIComponent(movieTime);
+    window.location.href = url;
+}
+</script>
+
+</body>
+</html>

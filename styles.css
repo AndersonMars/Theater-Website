@@ -1,0 +1,257 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
+    background-color: #333000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.movie-info {
+
+}
+/* Style for the header container */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; 
+    padding: 10px 20px; 
+    box-sizing: border-box; 
+    background-color: #333000; 
+    position: fixed; 
+    top: 0; 
+    z-index: 10; 
+}
+
+/* Style for the home button */
+#homeButton {
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: white; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1001;
+}
+
+#homeButton:hover {
+    background-color: #0056b3; 
+}
+
+.seat-map-container {
+  display: grid;
+  grid-template-columns: auto repeat(10, 1fr); 
+  grid-template-rows: auto repeat(8, 1fr); 
+  align-items: center;
+}
+
+.row-labels {
+  grid-column: 1;
+  grid-row: 2 / span 8; 
+}
+
+.number-labels {
+  grid-column: 2 / span 10; 
+  grid-row: 1;
+}
+
+.seat {
+  width: 20px; 
+  height: 20px; 
+  margin: 2px; 
+}
+
+/* Position the canvas and labels container in a centered layout */
+.center-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Style for row labels container */
+#rowLabelsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+   
+}
+
+/* Style for column labels container */
+#columnLabelsContainer {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    margin-top: 20px; 
+}
+
+.container,
+.bottom-container {
+    max-width: 600px;
+    margin: 20px auto; 
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-container {
+    margin-top: auto;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: black;
+    font-weight: bold; 
+    text-shadow: none; 
+    background: none; 
+    opacity: 1; 
+    text-align: center;
+    margin-top: 0.5em; 
+    margin-bottom: 0.5em; 
+}
+h3 {
+    color: whitesmoke;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold; 
+}
+
+input, select {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style the dropdown arrow */
+select {
+    appearance: auto; 
+    -webkit-appearance: auto; /* For Safari/Chrome */
+    -moz-appearance: auto; /* For Firefox */
+    appearance: auto;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.legend-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend-color {
+
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.available {
+    background-color: #00ff00; 
+}
+
+.selected {
+    background-color: #ff3030; 
+}
+
+.reserved {
+    background-color: #cccccc; 
+}
+
+.legend-text {
+    font-size: 14px;
+}
+#purchaseSeatsButton {
+    padding: 10px 20px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px; /* Add some space above the button */
+}
+
+#purchaseSeatsButton:hover {
+    background-color: #45a049; /* Slightly darker shade on hover */
+}
+
+/* The Modal */
+.modal {
+    display: none; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; 
+}
+/* The Close Button */
+.close {
+  
+  float: inline-end;
+  font-size: 16px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+

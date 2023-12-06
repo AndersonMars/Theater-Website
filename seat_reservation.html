@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Seat Reservation</title>
+</head>
+
+<body>
+    <div class="header">
+        <button id="homeButton">Home</button>
+    </div>
+
+    <h3><strong>Screen</strong></h3>
+
+    <div class="main-container">
+        <div class="center-container">
+            <canvas id="theaterCanvas"></canvas>
+        </div>
+
+        <p style="color:white"><strong>Maximum number of seats that can be reserved per person is five.</strong></p>
+        
+        <div id="movieDetails">
+            <h3 id="selectedMovieTitle"></h3>
+        </div>
+
+        <div class="center-container">
+            <div class="container">
+                <h1>Seat Reservation</h1>
+                <form id="reservationForm">
+                    <label for="selectedSeat">Selected Seat:</label>
+                    <input type="text" id="selectedSeat" name="selectedSeat" readonly>
+                    <button type="button" id="myBtn">Purchase Seats</button>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                                <h2>Confirm Your Seats</h2>
+                            </div>
+                            <div class="modal-body">
+                                <p id="modalBodyText">Are you sure you want to reserve these seats?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="confirmPurchase">Confirm</button>
+                                <button type="button" class="close">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="legend-container">
+        <h3>Legend</h3>
+        <div class="legend-item">
+            <span class="legend-color available"></span>
+            <span class="legend-text">Available</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color selected"></span>
+            <span class="legend-text">Selected</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-color reserved"></span>
+            <span class="legend-text">Reserved</span>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal and button elements
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var confirmButton = document.getElementById("confirmPurchase");
+    var modalBodyText = document.getElementById("modalBodyText");
+    var closeElements = document.getElementsByClassName("close");
+
+    // Function to handle the confirm action
+    function handleConfirm() {
+        modalBodyText.textContent = "Your seats have been confirmed!";
+        // Close the modal after a short delay
+        setTimeout(function() {
+            modal.style.display = "none";
+        }, 2000); // This will close the modal after 2 seconds
+    }
+
+    // Attach the event listener to the confirm button
+    confirmButton.addEventListener('click', handleConfirm);
+
+    // Function to close the modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks the button, open the modal 
+    btn.addEventListener('click', function(event) {
+        modal.style.display = "block";
+    });
+
+    // Add click event listener to all elements with the class "close"
+    Array.from(closeElements).forEach(function(element) {
+        element.addEventListener('click', closeModal);
+    });
+
+    // Close the modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+    </script>
+    
+    <script src="seat_reservation.js"></script>
+</body>
+
+</html>
